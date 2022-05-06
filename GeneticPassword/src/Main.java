@@ -6,9 +6,9 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		String password = "YapayZekaYontemleri";
+		String password = "Deep Learning 2022";
 		int totNumOfGeners = 30;
-		int populationSize = 1000;
+		int populationSize = 500;
 		int chromosomeSize = password.length();
 		int numberOfElitism = 100;
 		double pc = 1;
@@ -23,8 +23,7 @@ public class Main {
 
 		while (generationsCreated < totNumOfGeners) {
 			ArrayList<Chromosome> nextGeneration = new ArrayList<Chromosome>();
-			ArrayList<Chromosome> bests = pickBest(generation, numberOfElitism);
-			nextGeneration.addAll(bests);
+			nextGeneration.addAll(pickBest(generation, numberOfElitism));
 			while(true) {
 				
 				if(nextGeneration.size() == populationSize) {
